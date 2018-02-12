@@ -1,0 +1,10 @@
+{
+    "AUTHOR" : "Eunito",
+    "INSTALL_MSG" : "Thank you for adding the free open tournament finder bot ",
+    "NAME" : "BotTrnmnt",
+    "SHORT" : "Find free Clash Royale Tournaments",
+    "DESCRIPTION" : "with this tool you can find free tournaments in CR using statsRoyale api... Hurry!",
+    "TAGS" : ["free", "CR", "tournaments"],
+    "REQUIREMENTS" : ["json", "requests"],
+    "HIDDEN" : false
+}
