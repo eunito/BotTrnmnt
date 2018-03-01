@@ -10,6 +10,12 @@ class BotTrnmnt:
         self.bot = bot
 
     @commands.command()
+    async def mycom(self, ctx):
+    """This does stuff!"""
+    # Your code will go here
+    await ctx.send("I can do stuff!")
+
+    @commands.command(self)
     async def torneiosgratis():
         # encoding=utf8
         import sys
@@ -26,9 +32,6 @@ class BotTrnmnt:
             bloqueado=torneio['locked']
             inscritos=torneio['totalPlayers']
             limite=torneio['maxPlayers']
-            tempoEmFalta=torneio['timeLeft']
-            m, s = divmod(tempoEmFalta, 60)
-            h, m = divmod(m, 60)
             if (jaComecou==0 and bloqueado==False and inscritos != limite) :
                 await self.bot.say( ' ----------------- ')
                 await self.bot.say( 'Titulo -  ' + torneio['title'])
@@ -37,12 +40,10 @@ class BotTrnmnt:
                 await self.bot.say( 'Jogadores inscritos - ' + str(inscritos))
                 await self.bot.say( 'Limite de jogadores - ' + str(limite))    
                 await self.bot.say( 'Tempo para comecar - ' + str(torneio['warmup']))
-                await self.bot.say( 'Começa daqui a ' + "%d:%02d:%02d" % (h, m, s) + ' horas')
         
         if (len(torneiosDict)==0):
             await self.bot.say( 'Nao ha torneios gratuitos neste instante... :(')
 
-        await self.bot.say( 'O eunito manda cumprimentos! :)'
-                           
+
 def setup(bot):
     bot.add_cog(BotTrnmnt(bot))
